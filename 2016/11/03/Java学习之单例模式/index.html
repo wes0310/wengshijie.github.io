@@ -6,18 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>测试创建新博文 | 程序猿小白</title>
+  <title>Java学习之单例模式 | 程序猿小白</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="测试内容 哇哈哈哈哈哈哈哈哈哈哈哈">
+  <meta name="description" content="######代码1:懒汉式(面试用)1234567891011public class Student &amp;#123;	private Student() &amp;#123;    &amp;#125;    private static Student s = null;    public static Student getStudent() &amp;#123;    	if(s == null) &amp;#123;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="测试创建新博文">
-<meta property="og:url" content="http://yoursite.com/2016/10/31/测试创建新博文/index.html">
+<meta property="og:title" content="Java学习之单例模式">
+<meta property="og:url" content="http://yoursite.com/2016/11/03/Java学习之单例模式/index.html">
 <meta property="og:site_name" content="程序猿小白">
-<meta property="og:description" content="测试内容 哇哈哈哈哈哈哈哈哈哈哈哈">
-<meta property="og:updated_time" content="2016-10-31T05:03:12.242Z">
+<meta property="og:description" content="######代码1:懒汉式(面试用)1234567891011public class Student &amp;#123;	private Student() &amp;#123;    &amp;#125;    private static Student s = null;    public static Student getStudent() &amp;#123;    	if(s == null) &amp;#123;">
+<meta property="og:updated_time" content="2016-11-03T05:04:22.488Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="测试创建新博文">
-<meta name="twitter:description" content="测试内容 哇哈哈哈哈哈哈哈哈哈哈哈">
+<meta name="twitter:title" content="Java学习之单例模式">
+<meta name="twitter:description" content="######代码1:懒汉式(面试用)1234567891011public class Student &amp;#123;	private Student() &amp;#123;    &amp;#125;    private static Student s = null;    public static Student getStudent() &amp;#123;    	if(s == null) &amp;#123;">
   
     <link rel="alternative" href="/atom.xml" title="程序猿小白" type="application/atom+xml">
   
@@ -141,7 +141,7 @@
 </nav>
 
       <div class="body-wrap">
-        <article id="post-测试创建新博文" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-Java学习之单例模式" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <input type="hidden" class="isFancy" />
@@ -151,7 +151,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      测试创建新博文
+      Java学习之单例模式
     </h1>
   
 
@@ -159,18 +159,22 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <blockquote>
-<p>测试内容 哇哈哈哈哈哈哈哈哈哈哈哈</p>
-</blockquote>
+        <p>######代码1:懒汉式(面试用)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">public class Student &#123;</div><div class="line">	private Student() &#123;</div><div class="line">    &#125;</div><div class="line">    private static Student s = null;</div><div class="line">    public static Student getStudent() &#123;</div><div class="line">    	if(s == null) &#123;</div><div class="line">        	s = new Student();</div><div class="line">        &#125;</div><div class="line">        return s;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>######代码2:饿汉式(开发用)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">public class Student &#123;</div><div class="line">	private Student() &#123;</div><div class="line">    &#125;</div><div class="line">    private static Student s = new Student();</div><div class="line">    public static Student getStudent() &#123;</div><div class="line">        return s;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 
       
     </div>
     <div class="article-info article-info-index">
       
-      <a href="/2016/10/31/测试创建新博文/" class="archive-article-date">
-  	<time datetime="2016-10-31T05:02:20.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-10-31</time>
+      <a href="/2016/11/03/Java学习之单例模式/" class="archive-article-date">
+  	<time datetime="2016-11-03T05:03:23.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-11-03</time>
 </a>
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java-单例模式/">Java 单例模式</a></li></ul>
+	</div>
+
       
 
       <div class="clearfix"></div>
@@ -181,18 +185,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2016/11/03/Java学习之单例模式/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Java学习之单例模式
-        
-      </div>
-    </a>
   
-  
-    <a href="/2016/09/03/test-text/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title"></div>
+    <a href="/2016/10/31/测试创建新博文/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">测试创建新博文</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -226,7 +221,7 @@
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="测试创建新博文" data-title="测试创建新博文" data-url="http://yoursite.com/2016/10/31/测试创建新博文/"></div>
+	<div class="ds-thread" data-thread-key="Java学习之单例模式" data-title="Java学习之单例模式" data-url="http://yoursite.com/2016/11/03/Java学习之单例模式/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
