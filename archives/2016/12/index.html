@@ -6,18 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Java学习之单例模式 | 程序猿小白</title>
+  <title>Archives: 2016/12 | 程序猿小白</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="代码1:懒汉式(面试用)12345678910public class Student &amp;#123;    private Student() &amp;#123;&amp;#125;    private static Student s = null;    public static Student getStudent() &amp;#123;        if(s == null) &amp;#123;">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Java学习之单例模式">
-<meta property="og:url" content="http://yoursite.com/2016/11/03/Java学习之单例模式/index.html">
+  <meta name="description" content="生活一半记忆，一半继续">
+<meta property="og:type" content="website">
+<meta property="og:title" content="程序猿小白">
+<meta property="og:url" content="http://yoursite.com/archives/2016/12/index.html">
 <meta property="og:site_name" content="程序猿小白">
-<meta property="og:description" content="代码1:懒汉式(面试用)12345678910public class Student &amp;#123;    private Student() &amp;#123;&amp;#125;    private static Student s = null;    public static Student getStudent() &amp;#123;        if(s == null) &amp;#123;">
-<meta property="og:updated_time" content="2016-11-03T05:30:29.402Z">
+<meta property="og:description" content="生活一半记忆，一半继续">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Java学习之单例模式">
-<meta name="twitter:description" content="代码1:懒汉式(面试用)12345678910public class Student &amp;#123;    private Student() &amp;#123;&amp;#125;    private static Student s = null;    public static Student getStudent() &amp;#123;        if(s == null) &amp;#123;">
+<meta name="twitter:title" content="程序猿小白">
+<meta name="twitter:description" content="生活一半记忆，一半继续">
   
     <link rel="alternative" href="/atom.xml" title="程序猿小白" type="application/atom+xml">
   
@@ -141,108 +140,49 @@
 </nav>
 
       <div class="body-wrap">
-        <article id="post-Java学习之单例模式" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
         
   
-    <h1 class="article-title" itemprop="name">
-      Java学习之单例模式
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2016" class="archive-year">2016</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2016/12/11/Servlet知识整理/" class="archive-article-date">
+  	<time datetime="2016-12-11T14:32:38.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-12-11</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2016/12/11/Servlet知识整理/">Servlet知识整理</a>
     </h1>
   
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h5 id="代码1-懒汉式-面试用"><a href="#代码1-懒汉式-面试用" class="headerlink" title="代码1:懒汉式(面试用)"></a>代码1:懒汉式(面试用)</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">public class Student &#123;</div><div class="line">    private Student() &#123;&#125;</div><div class="line">    private static Student s = null;</div><div class="line">    public static Student getStudent() &#123;</div><div class="line">        if(s == null) &#123;</div><div class="line">            s = new Student();</div><div class="line">        &#125;</div><div class="line">        return s;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h5 id="代码2-饿汉式-开发用"><a href="#代码2-饿汉式-开发用" class="headerlink" title="代码2:饿汉式(开发用)"></a>代码2:饿汉式(开发用)</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">public class Student &#123;</div><div class="line">    private Student() &#123;&#125;</div><div class="line">    private static Student s = new Student();</div><div class="line">    public static Student getStudent() &#123;</div><div class="line">        return s;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      <a href="/2016/11/03/Java学习之单例模式/" class="archive-article-date">
-  	<time datetime="2016-11-03T05:03:23.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-11-03</time>
-</a>
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java-单例模式/">Java 单例模式</a></li></ul>
-	</div>
+        <div class="article-info info-on-right">
+          
+          
 
-      
-
-      <div class="clearfix"></div>
-    </div>
+        </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2016/12/11/Servlet知识整理/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Servlet知识整理
-        
-      </div>
-    </a>
   
   
-</nav>
+    </div></section>
+  
 
-
-
-
-<div class="share_jia">
-	<!-- JiaThis Button BEGIN -->
-	<div class="jiathis_style">
-		<span class="jiathis_txt">Share to: &nbsp; </span>
-		<a class="jiathis_button_facebook"></a> 
-	    <a class="jiathis_button_twitter"></a>
-	    <a class="jiathis_button_plus"></a> 
-	    <a class="jiathis_button_tsina"></a>
-		<a class="jiathis_button_cqq"></a>
-		<a class="jiathis_button_douban"></a>
-		<a class="jiathis_button_weixin"></a>
-		<a class="jiathis_button_tumblr"></a>
-    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
-	</div>
-	<script type="text/javascript" src="//v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
-	<!-- JiaThis Button END -->
-</div>
-
-
-
-
-
-
-<div class="duoshuo">
-	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="Java学习之单例模式" data-title="Java学习之单例模式" data-url="http://yoursite.com/2016/11/03/Java学习之单例模式/"></div>
-	<!-- 多说评论框 end -->
-	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-	<script type="text/javascript">
-	var duoshuoQuery = {short_name:"litten-hexo"};
-	(function() {
-		var ds = document.createElement('script');
-		ds.type = 'text/javascript';ds.async = true;
-		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-		ds.charset = 'UTF-8';
-		(document.getElementsByTagName('head')[0] 
-		 || document.getElementsByTagName('body')[0]).appendChild(ds);
-	})();
-	</script>
-	<!-- 多说公共JS代码 end -->
-</div>
-
-
-
+    
 
 
       </div>
@@ -265,8 +205,8 @@
 		mathjax: false,
 		animate: true,
 		isHome: false,
-		isPost: true,
-		isArchive: false,
+		isPost: false,
+		isArchive: true,
 		isTag: false,
 		isCategory: false,
 		open_in_new: true,
