@@ -142,6 +142,127 @@
       <div class="body-wrap">
         
   
+    <article id="post-Servlet知识整理" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/12/11/Servlet知识整理/">Servlet知识整理</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>[TOC]</p>
+<h4 id="1-什么是Servlet"><a href="#1-什么是Servlet" class="headerlink" title="1.什么是Servlet?"></a>1.什么是Servlet?</h4><p>它其实就是java类，运行在服务器端，主要用途就是处理用户发送HTTP请求,并且作出响应</p>
+<h4 id="2-怎么写"><a href="#2-怎么写" class="headerlink" title="2.怎么写?"></a>2.怎么写?</h4><p>1.定义一个类，间接或直接实现Servlet接口(GenericServlet)<br>2.服务的方法<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">service(ServletRequest request,ServletResponse response)&#123;</div><div class="line">	response.getWriter().write(<span class="string">""</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>在WEB-INF/classes下进行Servlet类文件编译：</p>
+<p>导包：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">set classpath=%classpath%;C:\apache-tomcat-6.0.37\lib\servlet-api.jar</div></pre></td></tr></table></figure></p>
+<p>编译class：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">javac -d . HelloServlet.java</div></pre></td></tr></table></figure></p>
+<p>3.做配置</p>
+<p>在web.xml写代码<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">servlet</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>HelloServlet<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">servlet-class</span>&gt;</span>com.itheima.servlet.HelloServlet<span class="tag">&lt;/<span class="name">servlet-class</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">servlet</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">servlet-mapping</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>HelloServlet<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">url-pattern</span>&gt;</span>/HelloServlet<span class="tag">&lt;/<span class="name">url-pattern</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">servlet-mapping</span>&gt;</span></div><div class="line">	//url-pattern这是代表访问的url路径应该怎么写,/代表当前的web应用</div><div class="line">	//servlet-class代表当前的这个Servlet所对应的包名.类名</div></pre></td></tr></table></figure></p>
+<p>执行过程图解:<br><img src="file:///C:/Users/wes/Desktop/markdown/img1.png" alt=""><br>4.部署应用到Tomcat中,并启动服务</p>
+<p>5.访问<a href="http://localhost:8080/myapp/App名字" target="_blank" rel="external">http://localhost:8080/myapp/App名字</a></p>
+<h4 id="3-修改Servlet代码模板"><a href="#3-修改Servlet代码模板" class="headerlink" title="3.修改Servlet代码模板"></a>3.修改Servlet代码模板</h4><ol>
+<li>找到MyEclipse安装目录</li>
+<li>搜索<em>wizards</em>.jar,找到模板文件Servlet.java</li>
+<li>修改</li>
+<li>注意，这个过程中要把MyEclipse关掉</li>
+</ol>
+<h4 id="4-当一个路径，有多个url匹配时，怎么走"><a href="#4-当一个路径，有多个url匹配时，怎么走" class="headerlink" title="4. 当一个路径，有多个url匹配时，怎么走?"></a>4. 当一个路径，有多个url匹配时，怎么走?</h4><ol>
+<li>如果一个映射的路径为/，则它为默认的Servlet,它会处理所有没有映射的请求</li>
+<li>能精确查找的用精确的</li>
+<li>不能精确查找的，先看/<em>,最后才考虑</em>.do,说明/的优先级比*要高</li>
+</ol>
+<h4 id="5-四个关于路径的细节（重要，要明白）"><a href="#5-四个关于路径的细节（重要，要明白）" class="headerlink" title="5.四个关于路径的细节（重要，要明白）"></a>5.四个关于路径的细节（重要，要明白）</h4><ol>
+<li>由于客户端是通过URL地址访问web服务器中的资源，所以Servlet程序若想被外界访问，必须把servlet程序映射到一个URL地址上，这个工作在web.xml文件中使用<code>&lt;servlet&gt;</code>元素和<code>&lt;servlet-mapping&gt;</code>元素完成。</li>
+<li><p>同一个Servlet可以被映射到多个URL上，即多个<code>&lt;servlet-mapping&gt;</code>元素的<code>&lt;servlet-name&gt;</code>子元素的设置值可以是同一个Servlet的注册名。<br>在Servlet映射到的URL中也可以使用 * 通配符，但是只能有两种固定的格式：一种格式是“*.扩展名”，另一种格式是以正斜杠（/）开头并以“/*”结尾。</p>
+</li>
+<li><p>映射优先级问题</p>
+</li>
+<li><p>缺省问题</p>
+</li>
+</ol>
+<ul>
+<li>如果某个Servlet的映射路径仅仅为一个正斜杠（/），那么这个Servlet就成为当前Web应用程序的缺省Servlet。</li>
+<li>凡是在web.xml文件中找不到匹配的<code>&lt;servlet-mapping&gt;</code>元素的URL，它们的访问请求都将交给缺省Servlet处理，也就是说，缺省Servlet用于处理所有其他Servlet都不处理的访问请求。</li>
+<li>在<code>&lt;tomcat的安装目录&gt;\conf\web.xml</code>文件中，注册了一个名称为org.apache.catalina.servlets.DefaultServlet的Servlet，并将这个Servlet设置为了缺省Servlet。</li>
+<li>当访问Tomcat服务器中的某个静态HTML文件和图片时，实际上是在访问这个缺省Servlet。 </li>
+</ul>
+<h4 id="6-生命周期"><a href="#6-生命周期" class="headerlink" title="6.生命周期"></a>6.生命周期</h4><ol>
+<li>实例化（1次)—–&gt;2.初始化(init  1次) —–&gt;3.服务(service  N次)——&gt;4.销毁(destory  1次)</li>
+<li>默认在第一次访问Servlet时，会进入这个Servlet的实例化，初始化，服务以后每次访问时只执行service()方法。也可以改成当服务器启动时，这个Servlet就实例化，初始化好了，以后调用只走service()此时可以在<code>&lt;servlet&gt;</code>结点下配一个<code>&lt;load-on-startup&gt;</code>整数<code>&lt;/load-on-startup&gt;</code>结点,建议不写1。==说明：整数代表容器启动时，加载的次序，数字越小优先级越高，尽量不写1?==</li>
+<li>当应用移除时，或服务器停止工作时，destory()方法被调用</li>
+</ol>
+<h4 id="7-线程安全"><a href="#7-线程安全" class="headerlink" title="7.线程安全"></a>7.线程安全</h4><ol>
+<li><p>当多个客户端并发访问同一个Servlet时，web服务器会为每一个客户端的访问请求创建一个线程，并在这个线程上调用Servlet的service方法，因此service方法内如果访问了同一个资源的话，就有可能引发线程安全问题。</p>
+</li>
+<li><p>解决并发问题，采用以下方式：</p>
+</li>
+</ol>
+<ul>
+<li>使用Java同步机制（同步锁）对多线程同步:运行效率低</li>
+<li><del>使用SingleThreadModel接口（已过时）</del></li>
+<li>==合理决定在Servlet中定义的变量的作用域==</li>
+</ul>
+<h4 id="8-ServletConfig"><a href="#8-ServletConfig" class="headerlink" title="8.ServletConfig"></a>8.ServletConfig</h4><ul>
+<li>在Servlet的配置文件中，可以使用一个或多个<code>&lt;init-param&gt;</code>标签为servlet配置一些初始化参数。</li>
+<li>当servlet配置了初始化参数后，web容器在创建servlet实例对象时，会自动将这些初始化参数封装到ServletConfig对象中，并在调用servlet的init方法时，将ServletConfig对象传递给servlet。进而，程序员通过ServletConfig对象就可以得到当前servlet的初始化参数信息。</li>
+<li>如何得到ServletConfig对象<br>第一种：init(ServletConfig config)<br>第二种：getServletConfig() 建议这种。注意用这种就不能重写init()</li>
+<li>方法：<br>getInitParameter(“name”)<br>getInitParameterNames() 返回一个Enumeration集合，可遍历得到每个参数</li>
+<li>作用举例：<br>  获得字符集编码<br>  获得数据库连接信息</li>
+</ul>
+<h4 id="9-ServletContext"><a href="#9-ServletContext" class="headerlink" title="9.ServletContext"></a>9.ServletContext</h4><p>它是什么？:<br>    代表一个上下文，它是每一个应用程序都有一个自己的ServletContext对象。<br>    当你的web应用加载时，ServletContext也就存在了，当你的web应用停止时，ServlectContext也就销毁了。<br>    它是一个全局范围，当前应用中所有的Servlet都可以共用同一个ServletContext</p>
+<ol>
+<li><p>怎么得到它的对象：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//第一种：</span></div><div class="line">ServletConfig.getServletContext();</div><div class="line"><span class="comment">//第二种:</span></div><div class="line">Servlet.getServletContext();</div><div class="line"><span class="comment">//打印ServletContext可知底层实现是由服务器决定的</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>内部结构？<br>由于一个WEB应用中的所有Servlet共享同一个ServletContext对象，因此Servlet对象之间可以通过ServletContext对象来实现通讯。ServletContext对象通常也被称之为context域对象。<br>== servlet之间的通讯： ==<br>setAtrribute()、getAtrribute()、removeAtrribute()<br>== 全局参数配置： ==<br>在web.xml使用以下一个或多个标签为servlet配置参数。</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">context-param</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">param-name</span>&gt;</span>encoding<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">param-value</span>&gt;</span>UTF-8<span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">context-param</span>&gt;</span></div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>getInitParameter(“name”)<br>getInitParameterNames() 返回一个Enumeration集合，可遍历得到多个全局参数</p>
+<ol>
+<li>用在哪些具体地方？<br><strong>实现Servlet的转发。</strong><br><strong>实现文件下载。</strong><br><strong>利用ServletContext对象读取资源文件，即.properties文件（属性文件）。</strong><br>得到文件路径(ServletContext.getRealPath(), getReaourceAsStream())，URL方式(中文路径)。<br><strong>读取资源文件的三种方式：</strong><br><em>第一种方式：</em><br>可以加载所有目录下的内容,但只用于web项目。<br><em>第二种方式：</em><br>ResouceBundle专门用于读取properties文件的，只用于加载类路径classes目录下的文件，java项目和web项目都可以用。<br><em>第三种方式：</em><br>就是用ClassLoader类加载器，得到类加载器的方法LoaderCfgServletDemo1.class.getClassLoader()<br>，类加载器一上来定位的目录是classes。</li>
+</ol>
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      <a href="/2016/12/11/Servlet知识整理/" class="archive-article-date">
+  	<time datetime="2016-12-11T14:32:38.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-12-11</time>
+</a>
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Servlet/">Servlet</a></li></ul>
+	</div>
+
+      
+
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+
+
+  
     <article id="post-Java学习之单例模式" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -253,7 +374,7 @@
     
     	<section class="tools-section tools-section-tag">
     			<div class="widget tagcloud" id="js-tagcloud">
-    				<a href="/tags/Java-单例模式/" style="font-size: 10px;">Java 单例模式</a>
+    				<a href="/tags/Java-单例模式/" style="font-size: 10px;">Java 单例模式</a> <a href="/tags/Servlet/" style="font-size: 10px;">Servlet</a>
     			</div>
     	</section>
     
