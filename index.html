@@ -160,6 +160,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
+		<!-- Table of Contents -->
+		
         <p>[TOC]</p>
 <h4 id="1-什么是Servlet"><a href="#1-什么是Servlet" class="headerlink" title="1.什么是Servlet?"></a>1.什么是Servlet?</h4><p>它其实就是java类，运行在服务器端，主要用途就是处理用户发送HTTP请求,并且作出响应</p>
 <h4 id="2-怎么写"><a href="#2-怎么写" class="headerlink" title="2.怎么写?"></a>2.怎么写?</h4><p>1.定义一个类，间接或直接实现Servlet接口(GenericServlet)<br>2.服务的方法<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">service(ServletRequest request,ServletResponse response)&#123;</div><div class="line">	response.getWriter().write(<span class="string">""</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
@@ -281,6 +283,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
+		<!-- Table of Contents -->
+		
         <h5 id="代码1-懒汉式-面试用"><a href="#代码1-懒汉式-面试用" class="headerlink" title="代码1:懒汉式(面试用)"></a>代码1:懒汉式(面试用)</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">public class Student &#123;</div><div class="line">    private Student() &#123;&#125;</div><div class="line">    private static Student s = null;</div><div class="line">    public static Student getStudent() &#123;</div><div class="line">        if(s == null) &#123;</div><div class="line">            s = new Student();</div><div class="line">        &#125;</div><div class="line">        return s;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h5 id="代码2-饿汉式-开发用"><a href="#代码2-饿汉式-开发用" class="headerlink" title="代码2:饿汉式(开发用)"></a>代码2:饿汉式(开发用)</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">public class Student &#123;</div><div class="line">    private Student() &#123;&#125;</div><div class="line">    private static Student s = new Student();</div><div class="line">    public static Student getStudent() &#123;</div><div class="line">        return s;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
       

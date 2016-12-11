@@ -19,7 +19,7 @@
 1.什么是Servlet?它其实就是java类，运行在服务器端，主要用途就是处理用户发送HTTP请求,并且作出响应
 2.怎么写?1.定义一个类，间接或直接实现Servlet接口(GenericServlet)2.服务的方法123service(ServletRequest request,ServletResponse response)&amp;#123;	response.getWrite">
 <meta property="og:image" content="http://yoursite.com/file:///C:/Users/wes/Desktop/markdown/img1.png">
-<meta property="og:updated_time" content="2016-12-11T14:46:48.285Z">
+<meta property="og:updated_time" content="2016-12-11T14:51:30.116Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Servlet知识整理">
 <meta name="twitter:description" content="[TOC]
@@ -167,6 +167,13 @@
     
     <div class="article-entry" itemprop="articleBody">
       
+		<!-- Table of Contents -->
+		
+		<div id="toc" class="toc-article">
+		<strong class="toc-title">文章目录</strong>
+		<ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-什么是Servlet"><span class="toc-number">1.</span> <span class="toc-text">1.什么是Servlet?</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-怎么写"><span class="toc-number">2.</span> <span class="toc-text">2.怎么写?</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-修改Servlet代码模板"><span class="toc-number">3.</span> <span class="toc-text">3.修改Servlet代码模板</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-当一个路径，有多个url匹配时，怎么走"><span class="toc-number">4.</span> <span class="toc-text">4. 当一个路径，有多个url匹配时，怎么走?</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-四个关于路径的细节（重要，要明白）"><span class="toc-number">5.</span> <span class="toc-text">5.四个关于路径的细节（重要，要明白）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-生命周期"><span class="toc-number">6.</span> <span class="toc-text">6.生命周期</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-线程安全"><span class="toc-number">7.</span> <span class="toc-text">7.线程安全</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8-ServletConfig"><span class="toc-number">8.</span> <span class="toc-text">8.ServletConfig</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#9-ServletContext"><span class="toc-number">9.</span> <span class="toc-text">9.ServletContext</span></a></li></ol>
+		</div>
+		
         <p>[TOC]</p>
 <h4 id="1-什么是Servlet"><a href="#1-什么是Servlet" class="headerlink" title="1.什么是Servlet?"></a>1.什么是Servlet?</h4><p>它其实就是java类，运行在服务器端，主要用途就是处理用户发送HTTP请求,并且作出响应</p>
 <h4 id="2-怎么写"><a href="#2-怎么写" class="headerlink" title="2.怎么写?"></a>2.怎么写?</h4><p>1.定义一个类，间接或直接实现Servlet接口(GenericServlet)<br>2.服务的方法<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">service(ServletRequest request,ServletResponse response)&#123;</div><div class="line">	response.getWriter().write(<span class="string">""</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
