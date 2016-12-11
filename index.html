@@ -162,8 +162,7 @@
       
 		<!-- Table of Contents -->
 		
-        <p>[TOC]</p>
-<h4 id="1-什么是Servlet"><a href="#1-什么是Servlet" class="headerlink" title="1.什么是Servlet?"></a>1.什么是Servlet?</h4><p>它其实就是java类，运行在服务器端，主要用途就是处理用户发送HTTP请求,并且作出响应</p>
+        <h4 id="1-什么是Servlet"><a href="#1-什么是Servlet" class="headerlink" title="1.什么是Servlet?"></a>1.什么是Servlet?</h4><p>它其实就是java类，运行在服务器端，主要用途就是处理用户发送HTTP请求,并且作出响应</p>
 <h4 id="2-怎么写"><a href="#2-怎么写" class="headerlink" title="2.怎么写?"></a>2.怎么写?</h4><p>1.定义一个类，间接或直接实现Servlet接口(GenericServlet)<br>2.服务的方法<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">service(ServletRequest request,ServletResponse response)&#123;</div><div class="line">	response.getWriter().write(<span class="string">""</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>在WEB-INF/classes下进行Servlet类文件编译：</p>
 <p>导包：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">set classpath=%classpath%;C:\apache-tomcat-6.0.37\lib\servlet-api.jar</div></pre></td></tr></table></figure></p>
