@@ -8,26 +8,23 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>Servlet知识整理 | 程序猿小白</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="##Servlet
-[TOC]
+  <meta name="description" content="[TOC]
 ####1.什么是Servlet?它其实就是java类，运行在服务器端，主要用途就是处理用户发送HTTP请求,并且作出响应
-####2.怎么写?1.定义一个类，间接或直接实现Servlet接口(GenericServlet)2.服务的方法123service(ServletRequest request,ServletResponse response)&amp;#123;">
+####2.怎么写?1.定义一个类，间接或直接实现Servlet接口(GenericServlet)2.服务的方法123service(ServletRequest request,ServletResponse response)&amp;#123;	response.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Servlet知识整理">
 <meta property="og:url" content="http://yoursite.com/2016/12/11/Servlet知识整理/index.html">
 <meta property="og:site_name" content="程序猿小白">
-<meta property="og:description" content="##Servlet
-[TOC]
+<meta property="og:description" content="[TOC]
 ####1.什么是Servlet?它其实就是java类，运行在服务器端，主要用途就是处理用户发送HTTP请求,并且作出响应
-####2.怎么写?1.定义一个类，间接或直接实现Servlet接口(GenericServlet)2.服务的方法123service(ServletRequest request,ServletResponse response)&amp;#123;">
+####2.怎么写?1.定义一个类，间接或直接实现Servlet接口(GenericServlet)2.服务的方法123service(ServletRequest request,ServletResponse response)&amp;#123;	response.">
 <meta property="og:image" content="http://yoursite.com/file:///C:/Users/wes/Desktop/markdown/img1.png">
-<meta property="og:updated_time" content="2016-12-11T14:33:10.005Z">
+<meta property="og:updated_time" content="2016-12-11T14:35:33.764Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Servlet知识整理">
-<meta name="twitter:description" content="##Servlet
-[TOC]
+<meta name="twitter:description" content="[TOC]
 ####1.什么是Servlet?它其实就是java类，运行在服务器端，主要用途就是处理用户发送HTTP请求,并且作出响应
-####2.怎么写?1.定义一个类，间接或直接实现Servlet接口(GenericServlet)2.服务的方法123service(ServletRequest request,ServletResponse response)&amp;#123;">
+####2.怎么写?1.定义一个类，间接或直接实现Servlet接口(GenericServlet)2.服务的方法123service(ServletRequest request,ServletResponse response)&amp;#123;	response.">
 <meta name="twitter:image" content="http://yoursite.com/file:///C:/Users/wes/Desktop/markdown/img1.png">
   
     <link rel="alternative" href="/atom.xml" title="程序猿小白" type="application/atom+xml">
@@ -170,8 +167,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>##Servlet</p>
-<p>[TOC]</p>
+        <p>[TOC]</p>
 <p>####1.什么是Servlet?<br>它其实就是java类，运行在服务器端，主要用途就是处理用户发送HTTP请求,并且作出响应</p>
 <p>####2.怎么写?<br>1.定义一个类，间接或直接实现Servlet接口(GenericServlet)<br>2.服务的方法<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">service(ServletRequest request,ServletResponse response)&#123;</div><div class="line">	response.getWriter().write(<span class="string">""</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>在WEB-INF/classes下进行Servlet类文件编译：</p>

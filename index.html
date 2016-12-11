@@ -160,8 +160,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>##Servlet</p>
-<p>[TOC]</p>
+        <p>[TOC]</p>
 <p>####1.什么是Servlet?<br>它其实就是java类，运行在服务器端，主要用途就是处理用户发送HTTP请求,并且作出响应</p>
 <p>####2.怎么写?<br>1.定义一个类，间接或直接实现Servlet接口(GenericServlet)<br>2.服务的方法<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">service(ServletRequest request,ServletResponse response)&#123;</div><div class="line">	response.getWriter().write(<span class="string">""</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>在WEB-INF/classes下进行Servlet类文件编译：</p>
